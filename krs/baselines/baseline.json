@@ -1,0 +1,12 @@
+{
+  "name": "mock-runtime-baseline",
+  "description": "Default baseline = mock artifact set, refreshed by scripts/demo_local.py. On real hardware regenerate with scripts/measure_baseline.py from a known-good VM image.",
+  "measurement": "360109b8f1f8d593decb2a48b54fcd9a32df30ff2d0c447a93381d4676935584c464f845d59915e966e22027c4c09f49",
+  "tcb": {
+    "build": 10,
+    "minor": 26,
+    "major": 1
+  },
+  "min_abi_major": 1,
+  "vmpl": null
+}

@@ -1,0 +1,13 @@
+[2026-10-24T22:25:50] ==== demo_local run | mode=mock-sev-snp | baseline=mock-runtime-baseline | measurement=360109b8f1f8d593decb2a48... | model=64MiB ====
+[2026-10-24T22:25:51] scenario=accept               expected=RELEASE result=RELEASED exit=0 wall_ms=1212 verdict=PASS
+[2026-10-24T22:25:52] scenario=tamper-measurement   expected=DENY    result=DENIED   exit=2 wall_ms=771 verdict=PASS
+    reason: [gate] ATTENTION: key release DENIED: KRS rejected the attestation (HTTP 403): attestation failed: measurement mismatch: got c9fef6470e072a6c2134d5b7... expected 360109b8f1f8d593decb2a48...
+[2026-10-24T22:25:52] scenario=tamper-signature     expected=DENY    result=DENIED   exit=2 wall_ms=691 verdict=PASS
+    reason: [gate] ATTENTION: key release DENIED: KRS rejected the attestation (HTTP 403): attestation failed: VCEK report signature invalid ()
+[2026-10-24T22:25:53] scenario=tamper-tcb           expected=DENY    result=DENIED   exit=2 wall_ms=813 verdict=PASS
+    reason: [gate] ATTENTION: key release DENIED: KRS rejected the attestation (HTTP 403): attestation failed: TCB rollback detected: report {'build': 5, 'minor': 16, 'major': 1, 'raw': 69637} < baseline {'build': 10, 'minor': 26, 'major': 1}
+[2026-10-24T22:25:54] scenario=tamper-report-data   expected=DENY    result=DENIED   exit=2 wall_ms=754 verdict=PASS
+    reason: [gate] ATTENTION: key release DENIED: KRS rejected the attestation (HTTP 403): attestation failed: REPORT_DATA does not match the challenge nonce
+[2026-10-24T22:25:54] scenario=nonce-reuse          expected=DENY   result=DENIED   verdict=PASS
+    reason: KRS rejected the attestation (HTTP 403): nonce already used (replay)
+[2026-10-24T22:25:54] ==== run summary: 6/6 scenarios PASS (all good) ====

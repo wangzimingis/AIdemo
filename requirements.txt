@@ -1,0 +1,8 @@
+# Core runtime (KRS + guest + mock + demo)
+fastapi>=0.110
+uvicorn[standard]>=0.29
+cryptography>=42.0
+
+# Guest-side inference on ROCm (install inside the confidential VM image,
+# or use the rocm/vllm container — NOT needed for the mock demo):
+#   vllm (ROCm build) ; see https://github.com/ROCm/vllm

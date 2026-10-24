@@ -1,0 +1,2 @@
+2026-10-24T22:25:54,gated-boot,mock-laptop,demo-weights,,,,,1212.3,1212.3,"challenge+report+verify+key-release round trip, 64MiB weights excluded"
+2026-10-24T22:25:54,ungated-boot,mock-laptop,demo-weights,,,,,,0,no attestation: baseline reference for gate overhead

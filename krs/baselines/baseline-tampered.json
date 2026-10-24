@@ -1,0 +1,12 @@
+{
+  "name": "tampered-runtime (negative test)",
+  "description": "Negative-test baseline: complement of baseline.json measurement, equivalent to a modified runtime (swapped kernel/initrd/gate). A KRS configured with THIS baseline must reject reports matching baseline.json, and vice versa. Used to demo the reject path in dual-baseline comparisons.",
+  "measurement": "c9fef6470e072a6c2134d5b74ab03265cd20cf00d2f3bb856cc7e2b9896caa7b3b9b07ba2a66ea16991ddfd83b3f60b6",
+  "tcb": {
+    "build": 10,
+    "minor": 26,
+    "major": 1
+  },
+  "min_abi_major": 1,
+  "vmpl": null
+}
