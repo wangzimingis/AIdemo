@@ -39,6 +39,12 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+> **实测提示（2026-10）**：平台镜像只有 `python3`（无 `python` 命令），
+> 且 `python3 -m venv` 因缺 ensurepip / python3.12-venv 失败（无 root）。
+> 镜像已预装 fastapi/uvicorn/cryptography，**跳过 venv 直接
+> `python3 xxx.py` 即可**。详见 REPRODUCTION.md 的"Ubuntu / 云镜像
+> 注意事项"。
+
 （没有 GitHub 仓库时：把本地项目打包成 zip，用 Code Server 的
 资源管理器拖拽上传到 `/home/jovyan`，再 `unzip`。）
 

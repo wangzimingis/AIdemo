@@ -14,7 +14,7 @@ mock 模式生成的证明报告与真实硬件在**字节布局、签名覆盖�
 
 ### A.1 环境准备
 
-- Python ≥ 3.10（3.13 已验证）
+- Python ≥ 3.10（3.13 已验证；云端镜像实测 3.12 亦可）
 - 网络可访问 PyPI
 
 ```bash
@@ -29,6 +29,19 @@ python -m venv .venv
 ```
 
 依赖仅三项：`fastapi`、`uvicorn`、`cryptography`（无任何闭源/占位依赖）。
+
+> **Ubuntu / 云镜像注意事项（实测踩坑）**
+>
+> 1. Ubuntu 系统通常只有 `python3` 命令，敲 `python` 会报
+>    `bash: python: command not found` —— 本文所有命令在这类环境下
+>    请把 `python` 换成 `python3`。
+> 2. 部分 Docker / 云镜像缺 `python3-venv`（ensurepip 不可用，且无
+>    root 装不了 `apt install python3.12-venv`），`python3 -m venv` 会
+>    失败。**若镜像已预装依赖**（如 AUP Learning Cloud 的镜像已自带
+>    fastapi/uvicorn/cryptography），可跳过 venv，直接
+>    `python3 scripts/demo_local.py --fresh`。
+> 3. 判断是否已预装：`pip install -r requirements.txt` 输出全为
+>    `Requirement already satisfied` 即可跳过隔离环境直接运行。
 
 ### A.2 一键端到端演示（六场景）
 
